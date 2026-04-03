@@ -1,59 +1,84 @@
-# # # # Core
-# # # streamlit>=1.35.0
-# # # requests>=2.31.0
-# # # python-dotenv>=1.0.0
+# # # # # Core
+# # # # streamlit>=1.35.0
+# # # # requests>=2.31.0
+# # # # python-dotenv>=1.0.0
 
-# # # # LangChain (v0.1+ split packages)
-# # # langchain>=0.2.0
-# # # langchain-core>=0.2.0
-# # # langchain-community>=0.2.0
-# # # langchain-text-splitters>=0.2.0
-# # # langchain-huggingface>=0.0.3
+# # # # # LangChain (v0.1+ split packages)
+# # # # langchain>=0.2.0
+# # # # langchain-core>=0.2.0
+# # # # langchain-community>=0.2.0
+# # # # langchain-text-splitters>=0.2.0
+# # # # langchain-huggingface>=0.0.3
 
-# # # # Embeddings & vector store
-# # # sentence-transformers>=2.7.0
-# # # chromadb>=0.4.0
+# # # # # Embeddings & vector store
+# # # # sentence-transformers>=2.7.0
+# # # # chromadb>=0.4.0
 
-# # # # Hybrid BM25 search
-# # # rank-bm25>=0.2.2
+# # # # # Hybrid BM25 search
+# # # # rank-bm25>=0.2.2
 
-# # # # PDF support
-# # # pdfplumber>=0.11.0
+# # # # # PDF support
+# # # # pdfplumber>=0.11.0
 
-# # # # Export
-# # # python-docx>=1.1.0
-# # # reportlab>=4.1.0
+# # # # # Export
+# # # # python-docx>=1.1.0
+# # # # reportlab>=4.1.0
 
 
-# # # # streamlit==1.44.1
-# # # # requests==2.32.3
-# # # # python-dotenv==1.0.1
+# # # # # streamlit==1.44.1
+# # # # # requests==2.32.3
+# # # # # python-dotenv==1.0.1
 
-# # # # langchain==0.3.23
-# # # # langchain-core==0.3.51
-# # # # langchain-community==0.3.21
-# # # # langchain-text-splitters==0.3.8
-# # # # langchain-huggingface==0.1.2
+# # # # # langchain==0.3.23
+# # # # # langchain-core==0.3.51
+# # # # # langchain-community==0.3.21
+# # # # # langchain-text-splitters==0.3.8
+# # # # # langchain-huggingface==0.1.2
 
-# # # # sentence-transformers==3.4.1
-# # # # chromadb==0.5.23
+# # # # # sentence-transformers==3.4.1
+# # # # # chromadb==0.5.23
 
-# # # # rank-bm25==0.2.2
+# # # # # rank-bm25==0.2.2
 
-# # # # pdfplumber==0.11.5
+# # # # # pdfplumber==0.11.5
 
-# # # # python-docx==1.1.2
-# # # # reportlab==4.2.5
+# # # # # python-docx==1.1.2
+# # # # # reportlab==4.2.5
 
-# # # # beautifulsoup4==4.13.3
-# # # # lxml==5.3.1
+# # # # # beautifulsoup4==4.13.3
+# # # # # lxml==5.3.1
+
+
+# # # streamlit==1.44.1
+# # # requests==2.32.3
+# # # python-dotenv==1.0.1
+
+# # # langchain==0.3.23
+# # # langchain-core==0.3.51
+# # # langchain-community==0.3.21
+# # # langchain-text-splitters==0.3.8
+# # # langchain-huggingface==0.1.2
+
+# # # sentence-transformers==3.4.1
+# # # chromadb==0.5.23
+
+# # # rank-bm25==0.2.2
+
+# # # pdfplumber==0.11.5
+
+# # # python-docx==1.1.2
+# # # reportlab==4.2.5
+
+# # # beautifulsoup4==4.13.3
+# # # lxml==5.3.1
+
+# # # protobuf==3.20.3
 
 
 # # streamlit==1.44.1
 # # requests==2.32.3
 # # python-dotenv==1.0.1
 
-# # langchain==0.3.23
 # # langchain-core==0.3.51
 # # langchain-community==0.3.21
 # # langchain-text-splitters==0.3.8
@@ -70,7 +95,6 @@
 # # reportlab==4.2.5
 
 # # beautifulsoup4==4.13.3
-# # lxml==5.3.1
 
 # # protobuf==3.20.3
 
@@ -83,6 +107,7 @@
 # langchain-community==0.3.21
 # langchain-text-splitters==0.3.8
 # langchain-huggingface==0.1.2
+# langsmith==0.1.147
 
 # sentence-transformers==3.4.1
 # chromadb==0.5.23
@@ -98,7 +123,6 @@
 
 # protobuf==3.20.3
 
-
 streamlit==1.44.1
 requests==2.32.3
 python-dotenv==1.0.1
@@ -111,6 +135,9 @@ langsmith==0.1.147
 
 sentence-transformers==3.4.1
 chromadb==0.5.23
+
+tokenizers==0.22.2
+transformers==4.46.3
 
 rank-bm25==0.2.2
 
