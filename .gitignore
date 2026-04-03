@@ -19,10 +19,10 @@ venv/
 
 chroma_store_news/
 chroma_store_openai/
+notebooks/
 *.db
 *.sqlite3
 *.pkl
 
 package-lock.json
 
-notebooks/
