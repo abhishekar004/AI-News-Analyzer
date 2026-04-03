@@ -44,12 +44,6 @@ except ImportError:
 from dotenv import load_dotenv
 load_dotenv()
 
-def get_secret(key: str, default: str = "") -> str:
-    try:
-        return st.secrets.get(key, os.environ.get(key, default))
-    except Exception:
-        return os.environ.get(key, default)
-
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # CENTRALISED CONFIG
@@ -104,7 +98,7 @@ class GeminiLLM:
 
     def invoke(self, prompt, stop=None):
         load_dotenv(override=True)
-        token = get_secret("GEMINI_API_KEY").strip()
+        token = os.environ.get("GEMINI_API_KEY", "").strip()
         if not token:
             return "Error: Set GEMINI_API_KEY in .env"
         url = f"{GEMINI_API_BASE}/{self.model}:generateContent?key={token}"
@@ -140,7 +134,7 @@ class GroqLLM:
 
     def invoke(self, prompt, stop=None):
         load_dotenv(override=True)
-        token = get_secret("GROQ_API_KEY").strip()
+        token = os.environ.get("GROQ_API_KEY", "").strip()
         if not token:
             return "Error: Set GROQ_API_KEY in .env"
         headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
@@ -178,7 +172,7 @@ class OpenRouterLLM:
 
     def invoke(self, prompt, stop=None):
         load_dotenv(override=True)
-        token = get_secret("OPENROUTER_API_KEY").strip()
+        token = os.environ.get("OPENROUTER_API_KEY", "").strip()
         if not token:
             return "Error: OPENROUTER_API_KEY not found. Add it to your .env file."
         headers = {
