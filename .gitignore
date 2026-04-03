@@ -1,0 +1,26 @@
+# .env
+# **pycache**/
+# *.pyc
+# *.pyo
+# *.pyd
+# .venv/
+# venv/
+# chroma_store_news/
+# *.db
+# *.sqlite3
+
+.env
+venv/
+.venv/
+**pycache**/
+*.pyc
+*.pyo
+*.pyd
+
+chroma_store_news/
+chroma_store_openai/
+*.db
+*.sqlite3
+*.pkl
+
+package-lock.json
