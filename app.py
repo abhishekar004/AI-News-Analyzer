@@ -1,5 +1,8 @@
 import warnings, os
 warnings.filterwarnings('ignore')
+
+os.environ["ANONYMIZED_TELEMETRY"] = "False"
+os.environ["CHROMA_TELEMETRY"] = "False"
 os.environ.setdefault('USER_AGENT', 'AINewsAnalyzer/1.0')
 
 # AI News Analyzer — Multi-source Opinion Synthesis with AI Contradiction-checking
