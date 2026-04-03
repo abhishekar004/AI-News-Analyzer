@@ -306,16 +306,6 @@ Possible future improvements include:
 
 ---
 
-## 👨‍💻 Author
-
-**Abhi Shekar Pulla**
-B.Tech CSE – RGUKT Srikakulam
-Campus Major Project
-
-* LinkedIn: https://www.linkedin.com/in/abhi-shekar-pulla
-* GitHub: https://github.com/abhishekar004
-
----
 
 ## 📜 License
 
