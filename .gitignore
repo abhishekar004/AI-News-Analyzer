@@ -24,3 +24,5 @@ chroma_store_openai/
 *.pkl
 
 package-lock.json
+
+notebooks/
