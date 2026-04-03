@@ -1,28 +1,63 @@
-# Core
-streamlit>=1.35.0
-requests>=2.31.0
-python-dotenv>=1.0.0
+# # Core
+# streamlit>=1.35.0
+# requests>=2.31.0
+# python-dotenv>=1.0.0
 
-# LangChain (v0.1+ split packages)
-langchain>=0.2.0
-langchain-core>=0.2.0
-langchain-community>=0.2.0
-langchain-text-splitters>=0.2.0
-langchain-huggingface>=0.0.3
+# # LangChain (v0.1+ split packages)
+# langchain>=0.2.0
+# langchain-core>=0.2.0
+# langchain-community>=0.2.0
+# langchain-text-splitters>=0.2.0
+# langchain-huggingface>=0.0.3
+
+# # Embeddings & vector store
+# sentence-transformers>=2.7.0
+# chromadb>=0.4.0
+
+# # Hybrid BM25 search
+# rank-bm25>=0.2.2
+
+# # PDF support
+# pdfplumber>=0.11.0
+
+# # Export
+# python-docx>=1.1.0
+# reportlab>=4.1.0
+
+# beautifulsoup4>=4.12.0
+# lxml>=4.9.0
+
+
+# Core
+streamlit==1.35.0
+requests==2.31.0
+python-dotenv==1.0.1
+beautifulsoup4==4.12.3
+lxml==5.2.2
+
+# LangChain
+langchain==0.2.16
+langchain-core==0.2.38
+langchain-community==0.2.16
+langchain-text-splitters==0.2.2
+langchain-huggingface==0.0.3
 
 # Embeddings & vector store
-sentence-transformers>=2.7.0
-chromadb>=0.4.0
+sentence-transformers==2.7.0
+chromadb==0.5.5
 
-# Hybrid BM25 search
-rank-bm25>=0.2.2
+# Chroma / protobuf compatibility fix
+protobuf==3.20.3
+opentelemetry-api==1.27.0
+opentelemetry-sdk==1.27.0
+opentelemetry-exporter-otlp-proto-grpc==1.27.0
+
+# Hybrid BM25
+rank-bm25==0.2.2
 
 # PDF support
-pdfplumber>=0.11.0
+pdfplumber==0.11.4
 
 # Export
-python-docx>=1.1.0
-reportlab>=4.1.0
-
-beautifulsoup4>=4.12.0
-lxml>=4.9.0
+python-docx==1.1.2
+reportlab==4.2.2
