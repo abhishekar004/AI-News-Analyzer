@@ -1,68 +1,395 @@
+# 📰 AI News Analyzer
 
-# RockyBot: News Research Tool 
+### **AI-Powered Multi-Source News Research & Contradiction Detection System**
 
-RockyBot is a user-friendly news research tool designed for effortless information retrieval. Users can input article URLs and ask questions to receive relevant insights from the stock market and financial domain.
+AI News Analyzer is an **AI-powered research and verification platform** designed to help users **analyze, compare, and validate information** from **multiple news articles and PDF documents**.
 
-![](rockybot.jpg)
+The system combines **Retrieval-Augmented Generation (RAG)**, **hybrid retrieval**, **contradiction detection**, **hallucination verification**, and **confidence scoring** to provide **trustworthy, source-grounded insights**.
 
-## Features
+> 🎓 Developed as a **Campus Major Project** to address the growing challenge of identifying reliable information across multiple online news sources.
 
-- Load URLs or upload text files containing URLs to fetch article content.
-- Process article content through LangChain's UnstructuredURL Loader
-- Construct an embedding vector using OpenAI's embeddings and leverage FAISS, a powerful similarity search library, to enable swift and effective retrieval of relevant information
-- Interact with the LLM's (Chatgpt) by inputting queries and receiving answers along with source URLs.
+---
 
+## 📌 Table of Contents
 
-## Installation
+- [Overview](#-overview)
+- [Problem Statement](#-problem-statement)
+- [Objectives](#-objectives)
+- [Key Features](#-key-features)
+- [How It Works](#-how-it-works)
+- [System Architecture](#-system-architecture)
+- [Tech Stack](#-tech-stack)
+- [Project Structure](#-project-structure)
+- [Installation & Setup](#-installation--setup)
+- [Environment Variables](#-environment-variables)
+- [Run the Application](#-run-the-application)
+- [Deployment](#-deployment)
+- [Use Cases](#-use-cases)
+- [Academic Relevance](#-academic-relevance)
+- [Future Enhancements](#-future-enhancements)
+- [Author](#-author)
+- [License](#-license)
 
-1.Clone this repository to your local machine using:
+---
+
+## 🔍 Overview
+
+In today’s digital world, users consume information from **multiple news platforms**, often with **different perspectives, claims, and biases**. This makes it difficult to determine:
+
+- which source is reliable,
+- which claims are supported by evidence,
+- where articles agree or contradict,
+- and whether AI-generated summaries are actually trustworthy.
+
+**AI News Analyzer** solves this by acting as an intelligent **multi-source research assistant** that helps users compare, verify, and understand news content more effectively.
+
+---
+
+## 🚀 Problem Statement
+
+Modern news consumption is fragmented across many websites, blogs, and reports. Traditional summarization tools usually focus on **single-document summarization** and often fail to support:
+
+- **cross-source comparison**
+- **contradiction identification**
+- **source-grounded question answering**
+- **answer verification**
+- **trust estimation**
+
+As a result, users may receive incomplete, biased, or unsupported summaries.
+
+### ✅ Proposed Solution
+
+AI News Analyzer provides a **multi-source AI analysis system** that can:
+
+- process multiple article URLs and PDF files,
+- retrieve the most relevant source evidence,
+- answer user questions using grounded context,
+- identify contradictions between sources,
+- verify whether responses are hallucinated,
+- and assign confidence scores for transparency.
+
+---
+
+## 🎯 Objectives
+
+The primary objectives of this project are:
+
+- To build an **AI-powered multi-source news analysis platform**
+- To enable users to **compare viewpoints across multiple sources**
+- To provide **source-grounded question answering**
+- To detect **contradictions** between news reports
+- To verify whether generated answers are **factually supported**
+- To improve trust using **confidence estimation**
+- To support **research export** in document formats
+
+---
+
+## ✨ Key Features
+
+## 🔗 Multi-Source Input
+- Analyze **multiple article URLs**
+- Upload and process **PDF documents**
+- Discover articles by entering a **topic**
+
+## 🧠 AI-Powered Research Assistant
+- Ask questions about uploaded or discovered content
+- Get **context-aware answers** backed by retrieved evidence
+- Supports multiple LLM providers:
+  - **Groq**
+  - **Google Gemini**
+  - **OpenRouter**
+
+## 🔍 Hybrid Retrieval System
+Combines multiple retrieval strategies for better answer quality:
+- **Semantic Search** using embeddings
+- **BM25 Keyword Search**
+- **Cross-Encoder Re-ranking**
+
+## ⚡ Contradiction Detection
+- Identifies **conflicting factual claims**
+- Highlights contradictions between sources
+- Helps users understand **where reports disagree**
+
+## 🧪 Hallucination Verification
+- Checks whether generated answers are **supported by retrieved evidence**
+- Reduces unsupported or misleading AI outputs
+
+## 🎯 Confidence Scoring
+Provides confidence labels such as:
+- **High**
+- **Medium**
+- **Low**
+
+This improves user trust and interpretability.
+
+## 📤 Export Support
+Export analysis sessions as:
+- **Word (.docx)**
+- **PDF (.pdf)**
+
+---
+
+## ⚙️ How It Works
+
+The system follows a **Retrieval-Augmented Generation (RAG)** workflow:
+
+1. User provides:
+   - article URLs
+   - topic-based news search
+   - or PDF documents
+2. The system extracts and cleans the text
+3. Content is split into manageable chunks
+4. Chunks are embedded and indexed in a vector database
+5. User asks a question
+6. Relevant chunks are retrieved using:
+   - semantic retrieval
+   - BM25 keyword matching
+   - reranking
+7. The LLM generates a contextual answer
+8. The system performs:
+   - contradiction detection
+   - hallucination verification
+   - confidence scoring
+9. Results are shown in an interactive interface
+
+---
+
+## 🏗️ System Architecture
+
+The project follows a modular AI pipeline:
+
+```text
+User Input (URLs / Topic / PDFs)
+            │
+            ▼
+   Content Extraction & Cleaning
+            │
+            ▼
+      Text Chunking Pipeline
+            │
+            ▼
+ Embedding + Hybrid Indexing (ChromaDB + BM25)
+            │
+            ▼
+      Query Understanding Layer
+            │
+            ▼
+  Retrieval + Re-ranking Pipeline
+            │
+            ▼
+      LLM Response Generation
+            │
+            ▼
+ ┌───────────────────────────────────────┐
+ │ Contradiction Detection               │
+ │ Hallucination Verification            │
+ │ Confidence Scoring                    │
+ └───────────────────────────────────────┘
+            │
+            ▼
+   Interactive Research Output + Export
+```
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Streamlit**
+
+### Backend
+- **Python**
+
+### AI / NLP
+- **LangChain**
+- **Sentence Transformers**
+- **HuggingFace Embeddings**
+- **Cross-Encoder Re-ranking**
+- **BM25 Retrieval**
+
+### Vector Database
+- **ChromaDB**
+
+### LLM Providers
+- **Groq**
+- **Google Gemini**
+- **OpenRouter**
+
+### Document Processing
+- **pdfplumber**
+- **python-docx**
+- **reportlab**
+
+### Optional / Utility Libraries
+- **BeautifulSoup**
+- **Requests**
+- **FAISS / Chroma-compatible retrieval utilities**
+- **dotenv**
+
+---
+
+## 📂 Project Structure
 
 ```bash
-  git clone https://github.com/codebasics/langchain.git
+AI-News-Analyzer/
+│
+├── app.py                 # Main Streamlit application
+├── requirements.txt       # Project dependencies
+├── .gitignore             # Ignored files/folders
+├── README.md              # Project documentation
+├── assets/                # Images / diagrams / screenshots (optional)
+└── notebooks/             # Research / experimentation notebooks (optional)
 ```
-2.Navigate to the project directory:
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the Repository
 
 ```bash
-  cd 2_news_research_tool_project
+git clone https://github.com/your-username/AI-News-Analyzer.git
+cd AI-News-Analyzer
 ```
-3. Install the required dependencies using pip:
+
+### 2️⃣ Create a Virtual Environment
 
 ```bash
-  pip install -r requirements.txt
+python -m venv venv
 ```
-4.Set up your OpenAI API key by creating a .env file in the project root and adding your API
+
+### 3️⃣ Activate the Virtual Environment
+
+#### Windows
+```bash
+venv\Scripts\activate
+```
+
+#### Linux / Mac
+```bash
+source venv/bin/activate
+```
+
+### 4️⃣ Install Dependencies
 
 ```bash
-  OPENAI_API_KEY=your_api_key_here
+pip install -r requirements.txt
 ```
-## Usage/Examples
 
-1. Run the Streamlit app by executing:
+---
+
+## 🔐 Environment Variables
+
+Create a `.env` file in the project root and add the following API keys:
+
+```env
+GROQ_API_KEY=your_groq_api_key_here
+GEMINI_API_KEY=your_gemini_api_key_here
+OPENROUTER_API_KEY=your_openrouter_api_key_here
+NEWSAPI_KEY=your_optional_newsapi_key_here
+```
+
+> **Note:** `NEWSAPI_KEY` is optional depending on your implementation.
+
+---
+
+## ▶️ Run the Application
+
 ```bash
-streamlit run main.py
-
+streamlit run app.py
 ```
 
-2.The web app will open in your browser.
+After running the command, the app will open in your browser.
 
-- On the sidebar, you can input URLs directly.
+---
 
-- Initiate the data loading and processing by clicking "Process URLs."
+## ☁️ Deployment
 
-- Observe the system as it performs text splitting, generates embedding vectors, and efficiently indexes them using FAISS.
+This project can be deployed on **Streamlit Community Cloud**.
 
-- The embeddings will be stored and indexed using FAISS, enhancing retrieval speed.
+### Deployment Steps
 
-- The FAISS index will be saved in a local file path in pickle format for future use.
-- One can now ask a question and get the answer based on those news articles
-- In video tutorial, we used following news articles
-  - https://www.moneycontrol.com/news/business/tata-motors-mahindra-gain-certificates-for-production-linked-payouts-11281691.html
-  - https://www.moneycontrol.com/news/business/tata-motors-launches-punch-icng-price-starts-at-rs-7-1-lakh-11098751.html
-  - https://www.moneycontrol.com/news/business/stocks/buy-tata-motors-target-of-rs-743-kr-choksey-11080811.html
+1. Push your project to GitHub
+2. Open **Streamlit Community Cloud**
+3. Create a new app
+4. Select:
+   - Repository
+   - Branch: `main`
+   - Main file: `app.py`
+5. Add the following **Secrets**:
 
-## Project Structure
+```toml
+GROQ_API_KEY="your_groq_api_key_here"
+GEMINI_API_KEY="your_gemini_api_key_here"
+OPENROUTER_API_KEY="your_openrouter_api_key_here"
+NEWSAPI_KEY="your_optional_newsapi_key_here"
+```
 
-- main.py: The main Streamlit application script.
-- requirements.txt: A list of required Python packages for the project.
-- faiss_store_openai.pkl: A pickle file to store the FAISS index.
-- .env: Configuration file for storing your OpenAI API key.
+---
+
+## 💡 Use Cases
+
+AI News Analyzer can be useful for:
+
+- **Students** researching current affairs
+- **Researchers** comparing source claims
+- **Journalists** validating conflicting reports
+- **Analysts** tracking issue narratives
+- **General readers** trying to understand complex news events
+
+---
+
+## 📚 Academic Relevance
+
+This project is highly relevant in the domains of:
+
+- **Artificial Intelligence**
+- **Natural Language Processing**
+- **Information Retrieval**
+- **Fact Verification**
+- **Misinformation Detection**
+- **AI-Assisted Research Systems**
+
+### Concepts Demonstrated
+- Retrieval-Augmented Generation (**RAG**)
+- **Hybrid Search**
+- **Contradiction Detection**
+- **Hallucination Checking**
+- **Confidence Estimation**
+- **Source-Grounded Answering**
+
+---
+
+## 🔮 Future Enhancements
+
+Possible future improvements include:
+
+- Source credibility scoring
+- Bias detection and sentiment analysis
+- Timeline-based event tracking
+- Claim extraction and comparison
+- Named Entity Recognition (NER)
+- Interactive visual analytics dashboard
+- Multilingual news analysis support
+- Real-time breaking news tracking
+
+---
+
+## 👨‍💻 Author
+
+**Abhi Shekar Pulla**  
+B.Tech CSE – RGUKT Srikakulam  
+Campus Major Project  
+
+- **LinkedIn:** https://www.linkedin.com/in/abhishekar004 
+- **GitHub:** https://github.com/abhishekar004  
+
+---
+
+## 📜 License
+
+This project is intended for **academic, educational, and research purposes**.
+
+If you plan to extend or publish this project publicly, you may add an open-source license such as **MIT License**.
+
+---
