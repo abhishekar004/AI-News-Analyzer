@@ -69,7 +69,7 @@ INDEX_REGISTRY = "chroma_store_news/indexed_sources.json"
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 GEMINI_MODEL    = "gemini-2.5-flash"
 GROQ_API_URL    = "https://api.groq.com/openai/v1/chat/completions"
-GROQ_MODEL      = "llama-3.1-8b-instant"
+GROQ_MODEL      = "openai/gpt-oss-20b"
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -968,11 +968,19 @@ with st.sidebar:
     st.caption("Multi-source research with contradiction detection")
     st.divider()
 
+    # LLM_OPTIONS = {
+    #     "Groq (free – Llama 3.1)": "groq",
+    #     "Gemini (Google)":         "gemini",
+    #     "OpenRouter":              "openrouter",
+    # }
+
     LLM_OPTIONS = {
-        "Groq (free – Llama 3.1)": "groq",
-        "Gemini (Google)":         "gemini",
-        "OpenRouter":              "openrouter",
+        "Groq – GPT OSS 20B": "groq",
+        "Gemini (Google)": "gemini",
+        "OpenRouter": "openrouter",
     }
+
+    
     provider = LLM_OPTIONS[st.selectbox("🤖 LLM", list(LLM_OPTIONS.keys()), index=0)]
     if provider == "groq":
         llm = GroqLLM()
